@@ -1,73 +1,16 @@
-# React + TypeScript + Vite
+# Individuell examination: Strajk bowling
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Typescript 
 
-Currently, two official plugins are available:
+Strajk Bowling är en mobilanpassad React-app där gäster bokar datum, tid, antal spelare och skostorlekar för en bowlingkväll.
+Appen pratar med Strajks backend, visar en personlig bekräftelse med totalpris och hanterar automatiskt om servern tillfälligt nekar bokningen.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Översikt
+- `src/types.ts` - samlar alla TypeScript-typer för bokningsformuläret och API-responset.
+- `src/api/booking.ts` -- hämtar API-nyckeln, skickar bokningen till backend och normaliserar svaret.
+- `src/App.tsx` - huvudkomponenten som växlar mellan bokning, laddning och bekräftelse och menyn.
+- `src/components/BookingForm.*` - bokningsformuläret med validering av datum/tid, spelare och skor.
+- `src/components/ConfirmationView.*` - visar pris, bokningsnummer m.m.
+- `src/components/MenuOverlay.*` -hamburgermenyn och overlay.
+- `src/components/LoadingScreen.*` - fullscreen loader som visas medan vi väntar på API.
+- `src/index.css` och `src/App.css` - global stilar och app-skalet.
