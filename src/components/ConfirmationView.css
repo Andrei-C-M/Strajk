@@ -1,0 +1,56 @@
+.confirmation-screen {
+  min-height: 100vh;
+  padding: 2rem 1.5rem 3rem;
+  background: #fdebe5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmation-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(71, 33, 122, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.detail-block {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.08rem;
+  color: #7d5c79;
+}
+
+.detail-value {
+  color: #47217a;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+  margin: 0;
+}
+
+.detail-label {
+  margin: 0;
+  color: #c6aac2;
+}
+
+.price-row {
+  border-top: 1px solid rgba(71, 33, 122, 0.15);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-value {
+  font-size: 1.4rem;
+  color: #f44379;
+  font-weight: 700;
+  margin: 0;
+}
+
